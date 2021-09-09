@@ -943,16 +943,16 @@
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
-                  Sales
+                  Where Im Running?
                 </h3>
                 <div class="card-tools">
                   <ul class="nav nav-pills ml-auto">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </div>
               </div><!-- /.card-header -->
@@ -960,8 +960,20 @@
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
                   <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 300px;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                       style="position: relative; height: 400px;">
+                      <!-- <canvas id="revenue-chart-canvas2" height="300" style="height: 300px;"></canvas> -->
+                      <?php
+                      $uname = php_uname("a");
+                      if(strpos($uname, "s390") === false) {
+                      ?>
+                    <img src="aws.png">
+                    <?php
+                      } else {
+                    ?>
+                    <img src="s390.png">
+                    <?php
+                      }
+                    ?>
                    </div>
                   <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
                     <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
