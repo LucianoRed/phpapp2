@@ -964,6 +964,7 @@
                       <!-- <canvas id="revenue-chart-canvas2" height="300" style="height: 300px;"></canvas> -->
                       <?php
                       $uname = php_uname("a");
+                      echo $uname;
                       if(strpos($uname, "s390") === false) {
                       ?>
                     <img src="aws.png">
