@@ -965,6 +965,8 @@
                       <?php
                       $uname = php_uname("a");
                       echo $uname;
+                      $cloud = getenv("CLOUD");
+                      echo "Cloud: $cloud";
                       if(strpos($uname, "s390") === false) {
                       ?>
                     <img src="aws.png">
