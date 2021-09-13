@@ -964,7 +964,7 @@
                       <!-- <canvas id="revenue-chart-canvas2" height="300" style="height: 300px;"></canvas> -->
                       <?php
                       $uname = php_uname("a");
-                      echo $uname;
+                     // echo $uname;
                       $cloud = getenv("CLOUD");
                      // echo "Cloud: $cloud";
                       if($cloud == "aws") {
@@ -1025,7 +1025,7 @@
                     <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
-                      Is this template really for free? That's unbelievable!
+                      What's the uname of this server?
                     </div>
                     <!-- /.direct-chat-text -->
                   </div>
@@ -1041,7 +1041,7 @@
                     <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
-                      You better believe it!
+                     The uname for this server is <?php echo $uname;?>
                     </div>
                     <!-- /.direct-chat-text -->
                   </div>
@@ -1057,7 +1057,13 @@
                     <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
-                      Working with AdminLTE on a great new app! Wanna join?
+                      <?php
+                      if($cloud == "s390x") {
+                        echo "Am I running on a Mainframe?? Thats amazing!";
+                      } else {
+                        echo "Nice! We are running on an x86_64 arch! Is it fast enough?";
+                      }
+                      ?>
                     </div>
                     <!-- /.direct-chat-text -->
                   </div>
