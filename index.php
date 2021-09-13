@@ -972,9 +972,16 @@
                     <img src="aws.png">
                     <?php
                       } else {
-                    ?>
+                        if($cloud == "s390x") {
+                          ?>
                     <img src="s390.png">
                     <?php
+                        } else {
+?>
+                    <img src="gcloud.png">
+
+<?php
+                        }
                       }
                     ?>
                    </div>
