@@ -967,9 +967,9 @@
                      // echo $uname;
                       $cloud = getenv("CLOUD");
                      // echo "Cloud: $cloud";
-                      if($cloud == "aws") {
+                      if($cloud == "gcloud") {
                       ?>
-                    <img src="aws.png">
+                    <img src="gcloud.png">
                     <?php
                       } else {
                         if($cloud == "s390x") {
@@ -978,7 +978,7 @@
                     <?php
                         } else {
 ?>
-                    <img src="gcloud.png">
+                    <img src="aws.png">
 
 <?php
                         }
