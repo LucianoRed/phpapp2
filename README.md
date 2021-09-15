@@ -125,3 +125,10 @@ AdminLTE.io reserves the right to change the license of future releases.
 - [Pickaface](https://pickaface.net/)
 - [Unsplash](https://unsplash.com/)
 - [Uifaces](http://uifaces.com/)
+
+
+## Testes de Seguranca
+nmap -T Insane -p111,2049 <rede para escanear > /tmp/lixo.txt
+cat /tmp/lixo.txt
+
+
