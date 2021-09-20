@@ -475,6 +475,10 @@
               </p>
             </a>
           </li>
+          <?php
+          $usa_backdoor = getenv("AUTORIZO_USO_VULNERABILIDADE");
+          if($usa_backdoor == "S") {
+          ?>
           <li class="nav-item">
             <a href="vul.php" class="nav-link">
               <i class="nav-icon far fa-image"></i>
@@ -483,6 +487,9 @@
               </p>
             </a>
           </li>
+          <?php
+          }
+          ?>
           <li class="nav-item">
             <a href="pages/kanban.html" class="nav-link">
               <i class="nav-icon fas fa-columns"></i>

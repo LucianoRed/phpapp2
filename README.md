@@ -1,4 +1,4 @@
-# PHP App para Demos. CUIDADO! Possui vulnerabilidades propositais para demonstracoes de segurança. 
+# PHP App para Demos.
 
 [![npm version](https://img.shields.io/npm/v/admin-lte/latest.svg)](https://www.npmjs.com/package/admin-lte)
 [![Packagist](https://img.shields.io/packagist/v/almasaeed2010/adminlte.svg)](https://packagist.org/packages/almasaeed2010/adminlte)
@@ -128,6 +128,9 @@ AdminLTE.io reserves the right to change the license of future releases.
 
 
 ## Testes de Seguranca
+CUIDADO! Possui vulnerabilidades propositais para demonstracoes de segurança. 
+Para habilitar a vulnerabilidade use a variavel de ambiente:
+AUTORIZO_USO_VUL
 nmap -T Insane -p111,2049 <rede para escanear > /tmp/lixo.txt
 cat /tmp/lixo.txt
 

