@@ -971,8 +971,16 @@
                       <!-- <canvas id="revenue-chart-canvas2" height="300" style="height: 300px;"></canvas> -->
                       <?php
                       $uname = php_uname("a");
+                      if(strpos($uname, "s390") !== false) {
+                          $cloud = "s390x";
+                      } else {
+                          $cloud = "aws";
+                      }
+                      
+
+
                      // echo $uname;
-                      $cloud = getenv("CLOUD");
+                      //$cloud = getenv("CLOUD");
                      // echo "Cloud: $cloud";
                       if($cloud == "gcloud") {
                       ?>
