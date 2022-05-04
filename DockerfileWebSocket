@@ -1,0 +1,3 @@
+FROM ksdn117/web-socket-test
+RUN touch /server.js && chmod 777 /server.js
+USER 12345
