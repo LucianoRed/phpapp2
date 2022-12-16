@@ -1,3 +1,12 @@
+<?php
+if(isset($_POST)) {
+   $entityBody = file_get_contents('php://input');
+  $fp = fopen("/tmp/lixo.txt", "a+");
+  fputs($fp, "$entityBody\n";
+        fclose($fp);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
