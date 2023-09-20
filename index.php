@@ -887,6 +887,40 @@
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
+
+      <div class="row">
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Sessoes abertas</span>
+                <span class="info-box-number" id="dynamicSpan">
+                  0
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box">
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Imagens Processadas</span>
+                <span class="info-box-number" id="dynamicSpan2">
+                  0
+                </span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+        </div>
+<div class="row">
       <h5 class="mb-2">Itens encontrados</h5>
         <div class="card card-success">
           <div class="card-body">
@@ -931,6 +965,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -1004,9 +1039,57 @@
                 // Update the src attribute of the img element
                 $("#item3").attr("src", newImageUrl3);
 
+                const spanElement = document.getElementById('dynamicSpan');
+
+                fetchAndUpdateSpan();
+                fetchAndUpdateSpan2();
 
             }, 5000); // 5000 milliseconds = 5 seconds
+
+            function fetchAndUpdateSpan() {
+            const url = 'https://roadshow-2023-git2-upload.apps.teste.sandbox2448.opentlc.com/contagem.php'; // Replace with the URL you want to fetch data from
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Get the span element by its id
+                    const spanElement = document.getElementById('dynamicSpan');
+
+                    // Update the text content of the span with the fetched data
+                    spanElement.textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+        function fetchAndUpdateSpan2() {
+            const url = 'https://roadshow-2023-git2-upload.apps.teste.sandbox2448.opentlc.com/uploads/number.txt'; // Replace with the URL you want to fetch data from
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    // Get the span element by its id
+                    const spanElement = document.getElementById('dynamicSpan2');
+
+                    // Update the text content of the span with the fetched data
+                    spanElement.textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
         });
+
     </script>
 </body>
 </html>
