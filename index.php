@@ -1068,7 +1068,7 @@
                 });
         }
         function fetchAndUpdateSpan2() {
-            const url = 'https://roadshow-2023-git2-upload.apps.teste.sandbox2448.opentlc.com/uploads/number.txt'; // Replace with the URL you want to fetch data from
+            const url = 'https://roadshow-2023-git2-upload.apps.teste.sandbox2448.opentlc.com/contagem_imagem.php'; // Replace with the URL you want to fetch data from
 
             fetch(url)
                 .then(response => {
