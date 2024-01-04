@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debugocp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: debugocp
+  template:
+    metadata:
+      labels:
+        app: debugocp
+    spec:
+      containers:
+        - name: debugocp-container
+          image: docker.io/lasher/debugocp # Imagem Docker a ser usada
+          ports:
+            - containerPort: 8080
