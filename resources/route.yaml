@@ -1,0 +1,14 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: debugocp
+  namespace: debugocp
+  labels:
+    app.kubernetes.io/instance: debugocp-local-cluster
+spec:
+  to:
+    kind: Service
+    name: debugocp
+  tls: null
+  port:
+    targetPort: 8080
