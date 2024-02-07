@@ -1,4 +1,5 @@
 <?php
+$host = getenv("HOST");
 $user = getenv("USER");
 $pass = getenv("PASS");
 $db = getenv("DB");
@@ -13,12 +14,14 @@ if($db == "") {
     $db = "mysql";   
 }
 
-$id = mysqli_connect("$db", "$user", $pass);
-mysqli_select_db($id, "sampledb");
-$qr = "select * from lixo";
+$id = mysqli_connect("$host", "$user", $pass);
+mysqli_select_db($id, "$db");
+$qr = "select * from veiculo";
 $rs = mysqli_query($id, $qr);
 while($x=mysqli_fetch_array($rs)) {
-    $lixo = $x['lixo'];
-    echo $lixo."<br>\n";
+    $id_veiculo = $x['id_veiculo'];
+    $veiculo = $x['veiculo'];
+    $cor = $x['cor'];
+    echo "Encontrado veiculo $lixo de cor $cor <br>\n";
 }
 ?>
