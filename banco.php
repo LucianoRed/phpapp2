@@ -18,6 +18,7 @@ $id = mysqli_connect("$host", "$user", $pass);
 mysqli_select_db($id, "$db");
 $qr = "select * from veiculo";
 $rs = mysqli_query($id, $qr);
+echo "Veiculos encontrados no banco: <br>\n";
 while($x=mysqli_fetch_array($rs)) {
     $id_veiculo = $x['id_veiculo'];
     $veiculo = $x['veiculo'];
