@@ -16,13 +16,13 @@ if($db == "") {
 
 $id = mysqli_connect("$host", "$user", $pass);
 mysqli_select_db($id, "$db");
-$qr = "select * from veiculo";
+$qr = "select * from veiculos";
 $rs = mysqli_query($id, $qr);
 echo "Veiculos encontrados no banco: <br>\n";
 while($x=mysqli_fetch_array($rs)) {
     $id_veiculo = $x['id_veiculo'];
     $veiculo = $x['veiculo'];
     $cor = $x['cor'];
-    echo "Encontrado veiculo $lixo de cor $cor <br>\n";
+    echo "Encontrado veiculo $veiculo de cor $cor <br>\n";
 }
 ?>
